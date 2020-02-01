@@ -7597,7 +7597,6 @@ Webflow.define('brand', module.exports = function ($) {
   var doc = document;
   var $html = $('html');
   var $body = $('body');
-  var namespace = '.w-webflow-badge';
   var location = window.location;
   var isPhantom = /PhantomJS/i.test(navigator.userAgent);
   var fullScreenEvents = 'fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange';
@@ -7613,7 +7612,6 @@ Webflow.define('brand', module.exports = function ($) {
     }
 
     if (shouldBrand && !isPhantom) {
-      brandElement = brandElement || createBadge();
       ensureBrand();
       setTimeout(ensureBrand, 500);
       $(doc).off(fullScreenEvents, onFullScreenChange).on(fullScreenEvents, onFullScreenChange);
